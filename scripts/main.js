@@ -46,13 +46,13 @@ let searchByButton = document.getElementById("search-by-button");
 let booksData = [];
 
 
-//  ---------------->>>>>> On Page Load Data will shown in DOM <<<<<<----------------
+//  On Page Load Data will shown in DOM 
 window.addEventListener("load", () => {
   fetchedDataFromApi();
 });
 
 
-//  ---------------->>>>>> GET : fetch api and get data from server and calling Display function <<<<<<----------------
+//  GET : fetch api and get data from server and calling Display function 
 const fetchedDataFromApi = async () => {
   try {
     const apiResponse  = await fetch(bookURL);
@@ -140,7 +140,7 @@ const displayData = (data) => {
 
 
 
-//  ---------------->>>>>> POST :  When you click this button then book add in API <<<<<<----------------
+//  POST :  When you click this button then book add in API 
 bookCreateBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -170,7 +170,7 @@ const addBook = async (data) => {
 };
 
 
-//  ---------------->>>>>> DELETE :  Delete Books form API <<<<<<----------------
+//  DELETE :  Delete Books form API 
 const deleteBooks = async (id) => {
   try {
     const apiResponse = await fetch(`${bookURL}/${id}`, {
@@ -186,7 +186,7 @@ const deleteBooks = async (id) => {
 };
 
 
-//  ---------------->>>>>> PATCH :  Update all Books Data list  in API <<<<<<----------------
+//  PATCH :  Update all Books Data list  in API 
 const appendDataInDisplay = async (id) => {
   try {
     const apiResponse = await fetch(`${bookURL}/${id}`, {
@@ -241,7 +241,7 @@ const updateBook = async (id,data) => {
 };
 
 
-//  ---------------->>>>>> PATCH :  Update Books Price Data list in API <<<<<<----------------
+//  PATCH :  Update Books Price Data list in API 
 const appendDataInDisplayOfPrice = async (id) => {
   try {
     const apiResponse = await fetch(`${bookURL}/${id}`, {
@@ -288,7 +288,7 @@ const updateBookByPrice = async (id,data) => {
 };
 
 
-//  ---------------->>>>>> Sorting Data in A-Z && Z-A<<<<<<----------------
+//  Sorting Data in A-Z && Z-A
 const sortingData = (data) => {
 
   // Ascending order
@@ -305,7 +305,7 @@ const sortingData = (data) => {
 };
 
 
-//  ---------------->>>>>> Filtering Data <<<<<<----------------
+//  Filtering Data 
 const filteredData = (data) => {
 
   // Classic Category
@@ -329,7 +329,7 @@ const filteredData = (data) => {
 };
 
 
-//  ---------------->>>>>> Searching Data by author or title<<<<<<----------------
+//  Searching Data by author or title
 searchByButton.addEventListener("click",(e)=>{
   e.preventDefault();
   searchingData();
